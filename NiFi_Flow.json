@@ -1,0 +1,2040 @@
+{
+  "template@encoding-version": "1.3",
+  "template": [
+    {},
+    {
+      "groupId": "92b6d367-0195-1000-dba2-4dd17e62900f"
+    },
+    {
+      "name": "DSC650 NiFi Flow"
+    },
+    {
+      "snippet": {
+        "processGroups": [
+          {
+            "id": "7853a1e6-4056-31b0-0000-000000000000"
+          },
+          {
+            "parentGroupId": "9deaf73c-a26f-3f7e-0000-000000000000"
+          },
+          {
+            "position": [
+              {
+                "x": "0.0"
+              },
+              {
+                "y": "0.0"
+              }
+            ]
+          },
+          {
+            "versionedComponentId": "7853a1e6-4056-31b0-a900-da3b7cb339a0"
+          },
+          {},
+          {
+            "contents": [
+              {
+                "connections": [
+                  {
+                    "id": "75490fa6-2763-3631-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "versionedComponentId": "49751ac0-1e25-3961-b4f7-720ded8cbd02"
+                  },
+                  {
+                    "backPressureDataSizeThreshold": "1 GB"
+                  },
+                  {
+                    "backPressureObjectThreshold": "10000"
+                  },
+                  {
+                    "destination": [
+                      {
+                        "groupId": "7853a1e6-4056-31b0-0000-000000000000"
+                      },
+                      {
+                        "id": "9d716293-7a74-3605-0000-000000000000"
+                      },
+                      {
+                        "type": "FUNNEL"
+                      },
+                      {
+                        "versionedComponentId": "38f0acb5-768f-3093-856b-d546f5146f50"
+                      }
+                    ]
+                  },
+                  {
+                    "flowFileExpiration": "0 sec"
+                  },
+                  {
+                    "labelIndex": "1"
+                  },
+                  {
+                    "loadBalanceCompression": "DO_NOT_COMPRESS"
+                  },
+                  {},
+                  {
+                    "loadBalanceStatus": "LOAD_BALANCE_NOT_CONFIGURED"
+                  },
+                  {
+                    "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE"
+                  },
+                  {},
+                  {
+                    "selectedRelationships": "Failure"
+                  },
+                  {
+                    "selectedRelationships": "No Retry"
+                  },
+                  {
+                    "selectedRelationships": "Retry"
+                  },
+                  {
+                    "source": [
+                      {
+                        "groupId": "7853a1e6-4056-31b0-0000-000000000000"
+                      },
+                      {
+                        "id": "f57cf915-7cdf-3fec-0000-000000000000"
+                      },
+                      {
+                        "type": "PROCESSOR"
+                      },
+                      {
+                        "versionedComponentId": "14531e3e-d1c1-38f6-9161-a9ecdeabb69f"
+                      }
+                    ]
+                  },
+                  {
+                    "zIndex": "0"
+                  }
+                ]
+              },
+              {
+                "connections": [
+                  {
+                    "id": "a6921419-4bf3-3ce3-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "versionedComponentId": "fd651d86-5861-3fbd-a3f9-7fe788f2e446"
+                  },
+                  {
+                    "backPressureDataSizeThreshold": "1 GB"
+                  },
+                  {
+                    "backPressureObjectThreshold": "10000"
+                  },
+                  {
+                    "destination": [
+                      {
+                        "groupId": "7853a1e6-4056-31b0-0000-000000000000"
+                      },
+                      {
+                        "id": "435a6a3e-0b0b-3ffc-0000-000000000000"
+                      },
+                      {
+                        "type": "PROCESSOR"
+                      },
+                      {
+                        "versionedComponentId": "42ffb181-fe1d-34fd-a8ca-9f31f8c323d6"
+                      }
+                    ]
+                  },
+                  {
+                    "flowFileExpiration": "0 sec"
+                  },
+                  {
+                    "labelIndex": "1"
+                  },
+                  {
+                    "loadBalanceCompression": "DO_NOT_COMPRESS"
+                  },
+                  {},
+                  {
+                    "loadBalanceStatus": "LOAD_BALANCE_NOT_CONFIGURED"
+                  },
+                  {
+                    "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE"
+                  },
+                  {},
+                  {
+                    "selectedRelationships": "Response"
+                  },
+                  {
+                    "source": [
+                      {
+                        "groupId": "7853a1e6-4056-31b0-0000-000000000000"
+                      },
+                      {
+                        "id": "f57cf915-7cdf-3fec-0000-000000000000"
+                      },
+                      {
+                        "type": "PROCESSOR"
+                      },
+                      {
+                        "versionedComponentId": "14531e3e-d1c1-38f6-9161-a9ecdeabb69f"
+                      }
+                    ]
+                  },
+                  {
+                    "zIndex": "0"
+                  }
+                ]
+              },
+              {
+                "connections": [
+                  {
+                    "id": "e68b5008-e9cd-389b-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "versionedComponentId": "2c687f0f-a5a1-339a-8c3a-63614c70b437"
+                  },
+                  {
+                    "backPressureDataSizeThreshold": "1 GB"
+                  },
+                  {
+                    "backPressureObjectThreshold": "10000"
+                  },
+                  {
+                    "destination": [
+                      {
+                        "groupId": "7853a1e6-4056-31b0-0000-000000000000"
+                      },
+                      {
+                        "id": "7fe6c43e-ef6f-3af5-0000-000000000000"
+                      },
+                      {
+                        "type": "FUNNEL"
+                      },
+                      {
+                        "versionedComponentId": "00c785e4-db07-3e25-8be9-a9789082bda6"
+                      }
+                    ]
+                  },
+                  {
+                    "flowFileExpiration": "0 sec"
+                  },
+                  {
+                    "labelIndex": "1"
+                  },
+                  {
+                    "loadBalanceCompression": "DO_NOT_COMPRESS"
+                  },
+                  {},
+                  {
+                    "loadBalanceStatus": "LOAD_BALANCE_NOT_CONFIGURED"
+                  },
+                  {
+                    "loadBalanceStrategy": "DO_NOT_LOAD_BALANCE"
+                  },
+                  {},
+                  {
+                    "selectedRelationships": "failure"
+                  },
+                  {
+                    "source": [
+                      {
+                        "groupId": "7853a1e6-4056-31b0-0000-000000000000"
+                      },
+                      {
+                        "id": "435a6a3e-0b0b-3ffc-0000-000000000000"
+                      },
+                      {
+                        "type": "PROCESSOR"
+                      },
+                      {
+                        "versionedComponentId": "42ffb181-fe1d-34fd-a8ca-9f31f8c323d6"
+                      }
+                    ]
+                  },
+                  {
+                    "zIndex": "0"
+                  }
+                ]
+              },
+              {
+                "funnels": [
+                  {
+                    "id": "7fe6c43e-ef6f-3af5-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "position": [
+                      {
+                        "x": "576.0"
+                      },
+                      {
+                        "y": "544.0"
+                      }
+                    ]
+                  },
+                  {
+                    "versionedComponentId": "00c785e4-db07-3e25-8be9-a9789082bda6"
+                  }
+                ]
+              },
+              {
+                "funnels": [
+                  {
+                    "id": "9d716293-7a74-3605-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "position": [
+                      {
+                        "x": "-48.0"
+                      },
+                      {
+                        "y": "576.0"
+                      }
+                    ]
+                  },
+                  {
+                    "versionedComponentId": "38f0acb5-768f-3093-856b-d546f5146f50"
+                  }
+                ]
+              },
+              {
+                "labels": [
+                  {
+                    "id": "a531d73e-4f16-3885-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "position": [
+                      {
+                        "x": "432.0"
+                      },
+                      {
+                        "y": "184.0"
+                      }
+                    ]
+                  },
+                  {
+                    "versionedComponentId": "0374f3a5-f894-34bd-9fa4-ae22f353b4f4"
+                  },
+                  {
+                    "height": "64.0"
+                  },
+                  {
+                    "label": "Change directory from /tmp to whatever directory in HDFS you want"
+                  },
+                  {
+                    "style": {
+                      "entry": [
+                        {
+                          "key": "font-size"
+                        },
+                        {
+                          "value": "12px"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "width": "376.0"
+                  },
+                  {
+                    "zIndex": "0"
+                  }
+                ]
+              },
+              {
+                "labels": [
+                  {
+                    "id": "a576cd0b-d87c-387e-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "position": [
+                      {
+                        "x": "-208.0"
+                      },
+                      {
+                        "y": "168.0"
+                      }
+                    ]
+                  },
+                  {
+                    "versionedComponentId": "e9f261bd-5fed-33dd-a673-2198cefcf0a9"
+                  },
+                  {
+                    "height": "64.0"
+                  },
+                  {
+                    "label": "Downloads a CSV. You can NOT reuse the same CSV for your project"
+                  },
+                  {
+                    "style": {
+                      "entry": [
+                        {
+                          "key": "font-size"
+                        },
+                        {
+                          "value": "12px"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "width": "376.0"
+                  },
+                  {
+                    "zIndex": "0"
+                  }
+                ]
+              },
+              {
+                "processors": [
+                  {
+                    "id": "435a6a3e-0b0b-3ffc-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "position": [
+                      {
+                        "x": "424.0"
+                      },
+                      {
+                        "y": "280.0"
+                      }
+                    ]
+                  },
+                  {
+                    "versionedComponentId": "42ffb181-fe1d-34fd-a8ca-9f31f8c323d6"
+                  },
+                  {
+                    "bundle": [
+                      {
+                        "artifact": "nifi-hadoop-nar"
+                      },
+                      {
+                        "group": "org.apache.nifi"
+                      },
+                      {
+                        "version": "1.25.0"
+                      }
+                    ]
+                  },
+                  {
+                    "config": [
+                      {
+                        "backoffMechanism": "PENALIZE_FLOWFILE"
+                      },
+                      {
+                        "bulletinLevel": "WARN"
+                      },
+                      {},
+                      {
+                        "concurrentlySchedulableTaskCount": "1"
+                      },
+                      {
+                        "descriptors": [
+                          {
+                            "entry": [
+                              {
+                                "key": "Hadoop Configuration Resources"
+                              },
+                              {
+                                "value": {
+                                  "name": "Hadoop Configuration Resources"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "kerberos-credentials-service"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "identifiesControllerService": "org.apache.nifi.kerberos.KerberosCredentialsService"
+                                  },
+                                  {
+                                    "name": "kerberos-credentials-service"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "kerberos-user-service"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "identifiesControllerService": "org.apache.nifi.kerberos.KerberosUserService"
+                                  },
+                                  {
+                                    "name": "kerberos-user-service"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Kerberos Principal"
+                              },
+                              {
+                                "value": {
+                                  "name": "Kerberos Principal"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Kerberos Keytab"
+                              },
+                              {
+                                "value": {
+                                  "name": "Kerberos Keytab"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Kerberos Password"
+                              },
+                              {
+                                "value": {
+                                  "name": "Kerberos Password"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Kerberos Relogin Period"
+                              },
+                              {
+                                "value": {
+                                  "name": "Kerberos Relogin Period"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Additional Classpath Resources"
+                              },
+                              {
+                                "value": {
+                                  "name": "Additional Classpath Resources"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Directory"
+                              },
+                              {
+                                "value": {
+                                  "name": "Directory"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Conflict Resolution Strategy"
+                              },
+                              {
+                                "value": {
+                                  "name": "Conflict Resolution Strategy"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "writing-strategy"
+                              },
+                              {
+                                "value": {
+                                  "name": "writing-strategy"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Block Size"
+                              },
+                              {
+                                "value": {
+                                  "name": "Block Size"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "IO Buffer Size"
+                              },
+                              {
+                                "value": {
+                                  "name": "IO Buffer Size"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Replication"
+                              },
+                              {
+                                "value": {
+                                  "name": "Replication"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Permissions umask"
+                              },
+                              {
+                                "value": {
+                                  "name": "Permissions umask"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Remote Owner"
+                              },
+                              {
+                                "value": {
+                                  "name": "Remote Owner"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Remote Group"
+                              },
+                              {
+                                "value": {
+                                  "name": "Remote Group"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Compression codec"
+                              },
+                              {
+                                "value": {
+                                  "name": "Compression codec"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Ignore Locality"
+                              },
+                              {
+                                "value": {
+                                  "name": "Ignore Locality"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "executionNode": "ALL"
+                      },
+                      {
+                        "lossTolerant": "false"
+                      },
+                      {
+                        "maxBackoffPeriod": "10 mins"
+                      },
+                      {
+                        "penaltyDuration": "30 sec"
+                      },
+                      {
+                        "properties": [
+                          {
+                            "entry": [
+                              {
+                                "key": "Hadoop Configuration Resources"
+                              },
+                              {
+                                "value": "/home/andrewpfeifer/dsc650-infra/bellevue-bigdata/nifi/hadoopconf/core-site.xml"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": {
+                              "key": "kerberos-credentials-service"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "kerberos-user-service"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Kerberos Principal"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Kerberos Keytab"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Kerberos Password"
+                            }
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Kerberos Relogin Period"
+                              },
+                              {
+                                "value": "4 hours"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": {
+                              "key": "Additional Classpath Resources"
+                            }
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Directory"
+                              },
+                              {
+                                "value": "/project"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Conflict Resolution Strategy"
+                              },
+                              {
+                                "value": "fail"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "writing-strategy"
+                              },
+                              {
+                                "value": "writeAndRename"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": {
+                              "key": "Block Size"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "IO Buffer Size"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Replication"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Permissions umask"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Remote Owner"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Remote Group"
+                            }
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Compression codec"
+                              },
+                              {
+                                "value": "NONE"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Ignore Locality"
+                              },
+                              {
+                                "value": "false"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "retryCount": "10"
+                      },
+                      {
+                        "runDurationMillis": "0"
+                      },
+                      {
+                        "schedulingPeriod": "0 sec"
+                      },
+                      {
+                        "schedulingStrategy": "TIMER_DRIVEN"
+                      },
+                      {
+                        "yieldDuration": "1 sec"
+                      }
+                    ]
+                  },
+                  {
+                    "executionNodeRestricted": "false"
+                  },
+                  {
+                    "name": "PutHDFS"
+                  },
+                  {
+                    "relationships": [
+                      {
+                        "autoTerminate": "false"
+                      },
+                      {
+                        "name": "failure"
+                      },
+                      {
+                        "retry": "false"
+                      }
+                    ]
+                  },
+                  {
+                    "relationships": [
+                      {
+                        "autoTerminate": "true"
+                      },
+                      {
+                        "name": "success"
+                      },
+                      {
+                        "retry": "false"
+                      }
+                    ]
+                  },
+                  {
+                    "state": "RUNNING"
+                  },
+                  {},
+                  {
+                    "type": "org.apache.nifi.processors.hadoop.PutHDFS"
+                  }
+                ]
+              },
+              {
+                "processors": [
+                  {
+                    "id": "f57cf915-7cdf-3fec-0000-000000000000"
+                  },
+                  {
+                    "parentGroupId": "7853a1e6-4056-31b0-0000-000000000000"
+                  },
+                  {
+                    "position": [
+                      {
+                        "x": "-200.0"
+                      },
+                      {
+                        "y": "272.0"
+                      }
+                    ]
+                  },
+                  {
+                    "versionedComponentId": "14531e3e-d1c1-38f6-9161-a9ecdeabb69f"
+                  },
+                  {
+                    "bundle": [
+                      {
+                        "artifact": "nifi-standard-nar"
+                      },
+                      {
+                        "group": "org.apache.nifi"
+                      },
+                      {
+                        "version": "1.25.0"
+                      }
+                    ]
+                  },
+                  {
+                    "config": [
+                      {
+                        "backoffMechanism": "PENALIZE_FLOWFILE"
+                      },
+                      {
+                        "bulletinLevel": "WARN"
+                      },
+                      {},
+                      {
+                        "concurrentlySchedulableTaskCount": "1"
+                      },
+                      {
+                        "descriptors": [
+                          {
+                            "entry": [
+                              {
+                                "key": "HTTP Method"
+                              },
+                              {
+                                "value": {
+                                  "name": "HTTP Method"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Remote URL"
+                              },
+                              {
+                                "value": {
+                                  "name": "Remote URL"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "disable-http2"
+                              },
+                              {
+                                "value": {
+                                  "name": "disable-http2"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "SSL Context Service"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "identifiesControllerService": "org.apache.nifi.ssl.SSLContextService"
+                                  },
+                                  {
+                                    "name": "SSL Context Service"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Connection Timeout"
+                              },
+                              {
+                                "value": {
+                                  "name": "Connection Timeout"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Read Timeout"
+                              },
+                              {
+                                "value": {
+                                  "name": "Read Timeout"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Socket Write Timeout"
+                              },
+                              {
+                                "value": {
+                                  "name": "Socket Write Timeout"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "idle-timeout"
+                              },
+                              {
+                                "value": {
+                                  "name": "idle-timeout"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "max-idle-connections"
+                              },
+                              {
+                                "value": {
+                                  "name": "max-idle-connections"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "proxy-configuration-service"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "identifiesControllerService": "org.apache.nifi.proxy.ProxyConfigurationService"
+                                  },
+                                  {
+                                    "name": "proxy-configuration-service"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Proxy Host"
+                              },
+                              {
+                                "value": {
+                                  "name": "Proxy Host"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Proxy Port"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": {
+                                      "propertyName": "Proxy Host"
+                                    }
+                                  },
+                                  {
+                                    "name": "Proxy Port"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Proxy Type"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": {
+                                      "propertyName": "Proxy Host"
+                                    }
+                                  },
+                                  {
+                                    "name": "Proxy Type"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "invokehttp-proxy-user"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": {
+                                      "propertyName": "Proxy Host"
+                                    }
+                                  },
+                                  {
+                                    "name": "invokehttp-proxy-user"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "invokehttp-proxy-password"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": {
+                                      "propertyName": "Proxy Host"
+                                    }
+                                  },
+                                  {
+                                    "name": "invokehttp-proxy-password"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "oauth2-access-token-provider"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "identifiesControllerService": "org.apache.nifi.oauth2.OAuth2AccessTokenProvider"
+                                  },
+                                  {
+                                    "name": "oauth2-access-token-provider"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Basic Authentication Username"
+                              },
+                              {
+                                "value": {
+                                  "name": "Basic Authentication Username"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Basic Authentication Password"
+                              },
+                              {
+                                "value": {
+                                  "name": "Basic Authentication Password"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Digest Authentication"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": {
+                                      "propertyName": "Basic Authentication Username"
+                                    }
+                                  },
+                                  {
+                                    "name": "Digest Authentication"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Penalize on \"No Retry\""
+                              },
+                              {
+                                "value": {
+                                  "name": "Penalize on \"No Retry\""
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "send-message-body"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": [
+                                      {
+                                        "dependentValues": "POST"
+                                      },
+                                      {
+                                        "dependentValues": "PATCH"
+                                      },
+                                      {
+                                        "dependentValues": "PUT"
+                                      },
+                                      {
+                                        "propertyName": "HTTP Method"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "send-message-body"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "form-body-form-name"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": [
+                                      {
+                                        "dependentValues": "true"
+                                      },
+                                      {
+                                        "propertyName": "send-message-body"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "form-body-form-name"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "set-form-filename"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": {
+                                      "propertyName": "form-body-form-name"
+                                    }
+                                  },
+                                  {
+                                    "name": "set-form-filename"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Use Chunked Encoding"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": [
+                                      {
+                                        "dependentValues": "POST"
+                                      },
+                                      {
+                                        "dependentValues": "PATCH"
+                                      },
+                                      {
+                                        "dependentValues": "PUT"
+                                      },
+                                      {
+                                        "propertyName": "HTTP Method"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Use Chunked Encoding"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Content-Encoding"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": [
+                                      {
+                                        "dependentValues": "POST"
+                                      },
+                                      {
+                                        "dependentValues": "PATCH"
+                                      },
+                                      {
+                                        "dependentValues": "PUT"
+                                      },
+                                      {
+                                        "propertyName": "HTTP Method"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Content-Encoding"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Content-Type"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": [
+                                      {
+                                        "dependentValues": "POST"
+                                      },
+                                      {
+                                        "dependentValues": "PATCH"
+                                      },
+                                      {
+                                        "dependentValues": "PUT"
+                                      },
+                                      {
+                                        "propertyName": "HTTP Method"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "Content-Type"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Include Date Header"
+                              },
+                              {
+                                "value": {
+                                  "name": "Include Date Header"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Attributes to Send"
+                              },
+                              {
+                                "value": {
+                                  "name": "Attributes to Send"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Useragent"
+                              },
+                              {
+                                "value": {
+                                  "name": "Useragent"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Put Response Body In Attribute"
+                              },
+                              {
+                                "value": {
+                                  "name": "Put Response Body In Attribute"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Max Length To Put In Attribute"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": {
+                                      "propertyName": "Put Response Body In Attribute"
+                                    }
+                                  },
+                                  {
+                                    "name": "Max Length To Put In Attribute"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "ignore-response-content"
+                              },
+                              {
+                                "value": {
+                                  "name": "ignore-response-content"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "use-etag"
+                              },
+                              {
+                                "value": {
+                                  "name": "use-etag"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "etag-max-cache-size"
+                              },
+                              {
+                                "value": [
+                                  {
+                                    "dependencies": [
+                                      {
+                                        "dependentValues": "true"
+                                      },
+                                      {
+                                        "propertyName": "use-etag"
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "name": "etag-max-cache-size"
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "cookie-strategy"
+                              },
+                              {
+                                "value": {
+                                  "name": "cookie-strategy"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Always Output Response"
+                              },
+                              {
+                                "value": {
+                                  "name": "Always Output Response"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "flow-file-naming-strategy"
+                              },
+                              {
+                                "value": {
+                                  "name": "flow-file-naming-strategy"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Add Response Headers to Request"
+                              },
+                              {
+                                "value": {
+                                  "name": "Add Response Headers to Request"
+                                }
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Follow Redirects"
+                              },
+                              {
+                                "value": {
+                                  "name": "Follow Redirects"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "executionNode": "ALL"
+                      },
+                      {
+                        "lossTolerant": "false"
+                      },
+                      {
+                        "maxBackoffPeriod": "10 mins"
+                      },
+                      {
+                        "penaltyDuration": "30 sec"
+                      },
+                      {
+                        "properties": [
+                          {
+                            "entry": [
+                              {
+                                "key": "HTTP Method"
+                              },
+                              {
+                                "value": "GET"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Remote URL"
+                              },
+                              {
+                                "value": "https://raw.githubusercontent.com/apfeif4/dsc650-project/refs/heads/main/Medicaldataset.csv"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "disable-http2"
+                              },
+                              {
+                                "value": "False"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": {
+                              "key": "SSL Context Service"
+                            }
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Connection Timeout"
+                              },
+                              {
+                                "value": "5 secs"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Read Timeout"
+                              },
+                              {
+                                "value": "15 secs"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Socket Write Timeout"
+                              },
+                              {
+                                "value": "15 secs"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "idle-timeout"
+                              },
+                              {
+                                "value": "5 mins"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "max-idle-connections"
+                              },
+                              {
+                                "value": "5"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": {
+                              "key": "proxy-configuration-service"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Proxy Host"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Proxy Port"
+                            }
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Proxy Type"
+                              },
+                              {
+                                "value": "http"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": {
+                              "key": "invokehttp-proxy-user"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "invokehttp-proxy-password"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "oauth2-access-token-provider"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Basic Authentication Username"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Basic Authentication Password"
+                            }
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Digest Authentication"
+                              },
+                              {
+                                "value": "false"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Penalize on \"No Retry\""
+                              },
+                              {
+                                "value": "false"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "send-message-body"
+                              },
+                              {
+                                "value": "true"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": {
+                              "key": "form-body-form-name"
+                            }
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "set-form-filename"
+                              },
+                              {
+                                "value": "true"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Use Chunked Encoding"
+                              },
+                              {
+                                "value": "false"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Content-Encoding"
+                              },
+                              {
+                                "value": "DISABLED"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Content-Type"
+                              },
+                              {
+                                "value": "${mime.type}"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Include Date Header"
+                              },
+                              {
+                                "value": "True"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": {
+                              "key": "Attributes to Send"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Useragent"
+                            }
+                          },
+                          {
+                            "entry": {
+                              "key": "Put Response Body In Attribute"
+                            }
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Max Length To Put In Attribute"
+                              },
+                              {
+                                "value": "256"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "ignore-response-content"
+                              },
+                              {
+                                "value": "false"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "use-etag"
+                              },
+                              {
+                                "value": "false"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "etag-max-cache-size"
+                              },
+                              {
+                                "value": "10MB"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "cookie-strategy"
+                              },
+                              {
+                                "value": "DISABLED"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Always Output Response"
+                              },
+                              {
+                                "value": "false"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "flow-file-naming-strategy"
+                              },
+                              {
+                                "value": "RANDOM"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Add Response Headers to Request"
+                              },
+                              {
+                                "value": "false"
+                              }
+                            ]
+                          },
+                          {
+                            "entry": [
+                              {
+                                "key": "Follow Redirects"
+                              },
+                              {
+                                "value": "True"
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "retryCount": "10"
+                      },
+                      {
+                        "runDurationMillis": "0"
+                      },
+                      {
+                        "schedulingPeriod": "0 sec"
+                      },
+                      {
+                        "schedulingStrategy": "TIMER_DRIVEN"
+                      },
+                      {
+                        "yieldDuration": "1 sec"
+                      }
+                    ]
+                  },
+                  {
+                    "executionNodeRestricted": "false"
+                  },
+                  {
+                    "name": "InvokeHTTP"
+                  },
+                  {
+                    "relationships": [
+                      {
+                        "autoTerminate": "false"
+                      },
+                      {
+                        "name": "Failure"
+                      },
+                      {
+                        "retry": "false"
+                      }
+                    ]
+                  },
+                  {
+                    "relationships": [
+                      {
+                        "autoTerminate": "false"
+                      },
+                      {
+                        "name": "No Retry"
+                      },
+                      {
+                        "retry": "false"
+                      }
+                    ]
+                  },
+                  {
+                    "relationships": [
+                      {
+                        "autoTerminate": "true"
+                      },
+                      {
+                        "name": "Original"
+                      },
+                      {
+                        "retry": "false"
+                      }
+                    ]
+                  },
+                  {
+                    "relationships": [
+                      {
+                        "autoTerminate": "false"
+                      },
+                      {
+                        "name": "Response"
+                      },
+                      {
+                        "retry": "false"
+                      }
+                    ]
+                  },
+                  {
+                    "relationships": [
+                      {
+                        "autoTerminate": "false"
+                      },
+                      {
+                        "name": "Retry"
+                      },
+                      {
+                        "retry": "false"
+                      }
+                    ]
+                  },
+                  {
+                    "state": "STOPPED"
+                  },
+                  {},
+                  {
+                    "type": "org.apache.nifi.processors.standard.InvokeHTTP"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "defaultBackPressureDataSizeThreshold": "1 GB"
+          },
+          {
+            "defaultBackPressureObjectThreshold": "10000"
+          },
+          {
+            "defaultFlowFileExpiration": "0 sec"
+          },
+          {
+            "flowfileConcurrency": "UNBOUNDED"
+          },
+          {
+            "flowfileOutboundPolicy": "STREAM_WHEN_AVAILABLE"
+          },
+          {
+            "name": "Example_Project"
+          },
+          {}
+        ]
+      }
+    },
+    {
+      "timestamp": "05/26/2025 18:35:02 UTC"
+    }
+  ]
+}
