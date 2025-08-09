@@ -1,0 +1,578 @@
+Last login: Fri May 30 18:29:51 on ttys000
+(base) andrewpfeifer@Andrews-MBP ~ % ssh andrewpfeifer@34.55.11.199
+Welcome to Ubuntu 20.04.6 LTS (GNU/Linux 5.15.0-1083-gcp x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat May 31 05:13:11 UTC 2025
+
+  System load:  0.51               Processes:             136
+  Usage of /:   36.4% of 48.27GB   Users logged in:       0
+  Memory usage: 4%                 IPv4 address for ens4: 10.128.0.2
+  Swap usage:   0%
+
+ * Strictly confined Kubernetes makes edge and IoT secure. Learn how MicroK8s
+   just raised the bar for easy, resilient and secure K8s cluster deployment.
+
+   https://ubuntu.com/engage/secure-kubernetes-at-the-edge
+
+Expanded Security Maintenance for Infrastructure is not enabled.
+
+29 updates can be applied immediately.
+To see these additional updates run: apt list --upgradable
+
+Enable ESM Infra to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+New release '22.04.5 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+
+Last login: Sat May 31 01:35:17 2025 from 8.10.181.18
+andrewpfeifer@dsc650week1:~$ cd dsc650-infra/bellevue-bigdata/hadoop-hive-spark-hbase/
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/hadoop-hive-spark-hbase$ docker-compose up -d
+Creating network "hadoop-hive-spark-hbase_spark_net" with the default driver
+Creating hadoop-hive-spark-hbase_zoo2_1          ... done
+Creating hadoop-hive-spark-hbase_hivemetastore_1 ... done
+Creating hadoop-hive-spark-hbase_zoo1_1          ... done
+Creating hadoop-hive-spark-hbase_zoo3_1          ... done
+Creating hadoop-hive-spark-hbase_worker1_1       ... done
+Creating hadoop-hive-spark-hbase_worker2_1       ... done
+Creating hadoop-hive-spark-hbase_master_1        ... done
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/hadoop-hive-spark-hbase$ cd ..
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata$ cd nifi/
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/nifi$ /bin/bash nifi-*/bin/nifi.sh start
+nifi.sh: JAVA_HOME not set; results may vary
+
+Java home: 
+NiFi home: /home/andrewpfeifer/dsc650-infra/bellevue-bigdata/nifi/nifi-1.25.0
+
+Bootstrap Config File: /home/andrewpfeifer/dsc650-infra/bellevue-bigdata/nifi/nifi-1.25.0/conf/bootstrap.conf
+
+
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/nifi$ /bin/bash nifi-*/bin/nifi.sh stop
+nifi.sh: JAVA_HOME not set; results may vary
+
+Java home: 
+NiFi home: /home/andrewpfeifer/dsc650-infra/bellevue-bigdata/nifi/nifi-1.25.0
+
+Bootstrap Config File: /home/andrewpfeifer/dsc650-infra/bellevue-bigdata/nifi/nifi-1.25.0/conf/bootstrap.conf
+
+2025-05-31 05:18:32,095 INFO [main] org.apache.nifi.bootstrap.Command Apache NiFi has accepted the Shutdown Command and is shutting down now
+2025-05-31 05:18:32,200 INFO [main] org.apache.nifi.bootstrap.Command NiFi PID [7886] shutdown in progress...
+2025-05-31 05:18:34,226 INFO [main] org.apache.nifi.bootstrap.Command NiFi PID [7886] shutdown in progress...
+2025-05-31 05:18:36,250 INFO [main] org.apache.nifi.bootstrap.Command NiFi PID [7886] shutdown completed
+
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/nifi$ cd ..
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata$ cd hadoop-hive-spark-hbase/
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/hadoop-hive-spark-hbase$ docker-compose exec worker1 bash
+bash-5.0# pip3 install numpy
+Collecting numpy
+  Downloading numpy-1.21.6.zip (10.3 MB)
+     |████████████████████████████████| 10.3 MB 4.6 MB/s 
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+    Preparing wheel metadata ... done
+Building wheels for collected packages: numpy
+  Building wheel for numpy (PEP 517) ... done
+  Created wheel for numpy: filename=numpy-1.21.6-cp37-cp37m-linux_x86_64.whl size=16644447 sha256=593f171f427c795c5d73ddbcb5b7e7d100f233f11e72356f602be8fef9c9cc2e
+  Stored in directory: /root/.cache/pip/wheels/4e/7e/9e/0fde042ccff2493994076dac9c3fbd78feb444c3bd94eb386a
+Successfully built numpy
+Installing collected packages: numpy
+Successfully installed numpy-1.21.6
+bash-5.0# pip3 install happybase
+Collecting happybase
+  Downloading happybase-1.2.0.tar.gz (40 kB)
+     |████████████████████████████████| 40 kB 2.9 MB/s 
+Collecting six
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting thriftpy2>=0.4
+  Downloading thriftpy2-0.5.2.tar.gz (782 kB)
+     |████████████████████████████████| 782 kB 8.3 MB/s 
+  Installing build dependencies ... done
+  WARNING: Missing build requirements in pyproject.toml for thriftpy2>=0.4 from https://files.pythonhosted.org/packages/f8/3a/d983b26df17583a3cc865a9e1737bb8faacfa1e16e3ed17353ef48847e6b/thriftpy2-0.5.2.tar.gz#sha256=cefcb2f6f8b12c00054c6f942dd2323a53b48b8b6862312d03b677dcf0d4a6da (from happybase).
+  WARNING: The project does not specify a build backend, and pip cannot fall back to setuptools without 'wheel'.
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+    Preparing wheel metadata ... done
+Collecting Cython>=3.0.10
+  Using cached Cython-3.0.12-py2.py3-none-any.whl (1.2 MB)
+Collecting ply<4.0,>=3.4
+  Downloading ply-3.11-py2.py3-none-any.whl (49 kB)
+     |████████████████████████████████| 49 kB 6.5 MB/s 
+Using legacy setup.py install for happybase, since package 'wheel' is not installed.
+Building wheels for collected packages: thriftpy2
+  Building wheel for thriftpy2 (PEP 517) ... done
+  Created wheel for thriftpy2: filename=thriftpy2-0.5.2-cp37-cp37m-linux_x86_64.whl size=1471929 sha256=1bb5e5fb93677676d9f1c0926452a31aa2c5dc8f8c77990e60d0440ac29f2b0c
+  Stored in directory: /root/.cache/pip/wheels/17/61/e8/9c4458a98088da816c0864fd90e7d7df01f36e4ee6e1fc599a
+Successfully built thriftpy2
+Installing collected packages: six, Cython, ply, thriftpy2, happybase
+    Running setup.py install for happybase ... done
+Successfully installed Cython-3.0.12 happybase-1.2.0 ply-3.11 six-1.17.0 thriftpy2-0.5.2
+bash-5.0# exit
+exit
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/hadoop-hive-spark-hbase$ docker-compose exec worker2 bash
+bash-5.0# pip3 install numpy
+Collecting numpy
+  Downloading numpy-1.21.6.zip (10.3 MB)
+     |████████████████████████████████| 10.3 MB 5.0 MB/s 
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+    Preparing wheel metadata ... done
+Building wheels for collected packages: numpy
+  Building wheel for numpy (PEP 517) ... done
+  Created wheel for numpy: filename=numpy-1.21.6-cp37-cp37m-linux_x86_64.whl size=16644515 sha256=182f78de85c838cba797c82cbae2c58690483d6eaa593380cb3d0a171ed73fc8
+  Stored in directory: /root/.cache/pip/wheels/4e/7e/9e/0fde042ccff2493994076dac9c3fbd78feb444c3bd94eb386a
+Successfully built numpy
+Installing collected packages: numpy
+Successfully installed numpy-1.21.6
+bash-5.0# pip3 install happybase
+Collecting happybase
+  Downloading happybase-1.2.0.tar.gz (40 kB)
+     |████████████████████████████████| 40 kB 3.5 MB/s 
+Collecting six
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting thriftpy2>=0.4
+  Downloading thriftpy2-0.5.2.tar.gz (782 kB)
+     |████████████████████████████████| 782 kB 7.9 MB/s 
+  Installing build dependencies ... done
+  WARNING: Missing build requirements in pyproject.toml for thriftpy2>=0.4 from https://files.pythonhosted.org/packages/f8/3a/d983b26df17583a3cc865a9e1737bb8faacfa1e16e3ed17353ef48847e6b/thriftpy2-0.5.2.tar.gz#sha256=cefcb2f6f8b12c00054c6f942dd2323a53b48b8b6862312d03b677dcf0d4a6da (from happybase).
+  WARNING: The project does not specify a build backend, and pip cannot fall back to setuptools without 'wheel'.
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+    Preparing wheel metadata ... done
+Collecting Cython>=3.0.10
+  Using cached Cython-3.0.12-py2.py3-none-any.whl (1.2 MB)
+Collecting ply<4.0,>=3.4
+  Downloading ply-3.11-py2.py3-none-any.whl (49 kB)
+     |████████████████████████████████| 49 kB 6.8 MB/s 
+Using legacy setup.py install for happybase, since package 'wheel' is not installed.
+Building wheels for collected packages: thriftpy2
+  Building wheel for thriftpy2 (PEP 517) ... done
+  Created wheel for thriftpy2: filename=thriftpy2-0.5.2-cp37-cp37m-linux_x86_64.whl size=1471951 sha256=47f311adf2304cdbe1909c96480d75a7dbbba3bfc0d900ed9076cb61b740b274
+  Stored in directory: /root/.cache/pip/wheels/17/61/e8/9c4458a98088da816c0864fd90e7d7df01f36e4ee6e1fc599a
+Successfully built thriftpy2
+Installing collected packages: six, Cython, ply, thriftpy2, happybase
+    Running setup.py install for happybase ... done
+Successfully installed Cython-3.0.12 happybase-1.2.0 ply-3.11 six-1.17.0 thriftpy2-0.5.2
+bash-5.0# exit
+exit
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/hadoop-hive-spark-hbase$ docker-compose exec master bash
+bash-5.0# pip3 install numpy
+Collecting numpy
+  Downloading numpy-1.21.6.zip (10.3 MB)
+     |████████████████████████████████| 10.3 MB 4.6 MB/s 
+  Installing build dependencies ... done
+  Getting requirements to build wheel ... done
+    Preparing wheel metadata ... done
+Building wheels for collected packages: numpy
+  Building wheel for numpy (PEP 517) ... done
+  Created wheel for numpy: filename=numpy-1.21.6-cp37-cp37m-linux_x86_64.whl size=16644481 sha256=842e9ab433949cb07833fe7d958f4405f9c3f822c3efd927ee2801356ca8ca89
+  Stored in directory: /root/.cache/pip/wheels/4e/7e/9e/0fde042ccff2493994076dac9c3fbd78feb444c3bd94eb386a
+Successfully built numpy
+Installing collected packages: numpy
+Successfully installed numpy-1.21.6
+bash-5.0# pip3 install happybase
+Collecting happybase
+  Downloading happybase-1.2.0.tar.gz (40 kB)
+     |████████████████████████████████| 40 kB 3.3 MB/s 
+Collecting six
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting thriftpy2>=0.4
+  Downloading thriftpy2-0.5.2.tar.gz (782 kB)
+     |████████████████████████████████| 782 kB 7.7 MB/s 
+  Installing build dependencies ... done
+  WARNING: Missing build requirements in pyproject.toml for thriftpy2>=0.4 from https://files.pythonhosted.org/packages/f8/3a/d983b26df17583a3cc865a9e1737bb8faacfa1e16e3ed17353ef48847e6b/thriftpy2-0.5.2.tar.gz#sha256=cefcb2f6f8b12c00054c6f942dd2323a53b48b8b6862312d03b677dcf0d4a6da (from happybase).
+  WARNING: The project does not specify a build backend, and pip cannot fall back to setuptools without 'wheel'.
+  Getting requirements to build wheel ... done
+  Installing backend dependencies ... done
+    Preparing wheel metadata ... done
+Collecting Cython>=3.0.10
+  Using cached Cython-3.0.12-py2.py3-none-any.whl (1.2 MB)
+Collecting ply<4.0,>=3.4
+  Downloading ply-3.11-py2.py3-none-any.whl (49 kB)
+     |████████████████████████████████| 49 kB 5.4 MB/s 
+Using legacy setup.py install for happybase, since package 'wheel' is not installed.
+Building wheels for collected packages: thriftpy2
+  Building wheel for thriftpy2 (PEP 517) ... done
+  Created wheel for thriftpy2: filename=thriftpy2-0.5.2-cp37-cp37m-linux_x86_64.whl size=1471950 sha256=0067c64060996c7ca29b4c440a6d516d80c5cc763500d72e59bcaada9f14e39c
+  Stored in directory: /root/.cache/pip/wheels/17/61/e8/9c4458a98088da816c0864fd90e7d7df01f36e4ee6e1fc599a
+Successfully built thriftpy2
+Installing collected packages: six, Cython, ply, thriftpy2, happybase
+    Running setup.py install for happybase ... done
+Successfully installed Cython-3.0.12 happybase-1.2.0 ply-3.11 six-1.17.0 thriftpy2-0.5.2
+bash-5.0# hdfs dfs -mv /project/11d4cfa1-af87-4d11-8409-aa5374057ff7 /project/meddata
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/program/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/program/tez/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/program/hive/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+2025-05-31 05:39:51,096 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+bash-5.0# hive
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/program/hive/lib/log4j-slf4j-impl-2.10.0.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/program/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/program/tez/lib/slf4j-log4j12-1.7.10.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+Hive Session ID = dd079688-dc5e-4605-8071-55f1cd5d6bc3
+
+Logging initialized using configuration in file:/usr/program/hive/conf/hive-log4j2.properties Async: true
+2025-05-31 05:40:24,546 INFO  [Tez session start thread] client.RMProxy: Connecting to ResourceManager at master/172.28.1.1:8032
+Hive Session ID = 4f4fe8b9-7d77-42f5-b415-aa94dc5ceb45
+2025-05-31 05:40:25,328 INFO  [pool-7-thread-1] client.RMProxy: Connecting to ResourceManager at master/172.28.1.1:8032
+hive>      CREATE TABLE hattack(
+    >          age INT,
+    >          gender INT,
+    >          rate INT,
+    >          sbp INT,
+    >          dbp INT,
+    >          bs INT,
+    >          ckmb INT,
+    >          trop INT,
+    >          result INT)
+    >      ROW FORMAT DELIMITED
+    >      FIELDS TERMINATED BY ','
+    >      STORED AS TEXTFILE
+    >      tblproperties("skip.header.line.count"="1");
+OK
+Time taken: 5.659 seconds
+hive> LOAD DATA INPATH '/project/meddata' INTO TABLE hattack;
+Loading data to table default.hattack
+OK
+Time taken: 2.482 seconds
+hive> SELECT * FROM hattack;
+OK
+64	1	66	160	83	160	1	0	0
+21	1	94	98	46	296	6	1	1
+55	1	64	160	77	270	1	0	0
+64	1	70	120	55	270	13	0	1
+55	1	64	112	65	300	1	0	0
+58	0	61	112	58	87	1	0	0
+32	0	40	179	68	102	0	0	0
+63	1	60	214	82	87	300	2	1
+44	0	60	154	81	135	2	0	0
+67	1	61	160	95	100	2	0	0
+44	0	60	166	90	102	2	0	0
+63	0	60	150	83	198	2	0	0
+64	1	60	199	99	92	3	5	1
+54	0	94	122	67	97	1	0	0
+47	1	76	120	70	319	2	0	0
+61	1	81	118	66	134	1	0	1
+86	0	73	114	68	87	1	0	1
+45	0	70	100	68	96	0	0	0
+37	0	72	107	86	274	2	0	0
+45	1	60	109	65	89	1	0	1
+60	1	92	151	78	301	1	0	0
+48	1	135	98	60	100	94	0	1
+52	1	76	109	85	227	0	0	1
+30	1	63	110	68	107	50	0	1
+50	1	63	104	63	269	38	0	1
+72	1	64	106	68	111	2	1	1
+42	1	65	150	68	101	2	0	0
+72	0	64	152	60	95	1	0	0
+47	0	66	134	57	279	300	0	1
+63	1	66	135	55	166	0	10	0
+54	1	125	131	82	95	1	8	1
+35	1	62	137	61	321	4	0	0
+68	1	61	121	49	98	6	0	1
+56	0	60	145	62	105	0	0	0
+50	1	61	136	70	136	1	1	1
+64	1	58	156	76	82	6	0	1
+65	1	60	166	82	117	4	0	0
+64	1	65	155	75	107	1	0	0
+50	0	93	120	71	120	0	0	0
+34	1	96	105	75	136	15	0	1
+44	1	94	91	52	208	1	0	0
+50	1	95	101	76	125	2	0	0
+50	1	96	105	70	103	16	0	1
+55	1	97	105	80	100	2	0	1
+63	1	91	121	82	93	4	0	1
+58	0	96	111	74	99	1	0	1
+40	1	87	115	78	228	4	0	1
+45	1	76	133	75	238	1	0	0
+46	1	77	153	76	96	1	0	0
+38	0	80	152	78	133	1	0	0
+47	1	82	125	61	136	2	0	1
+40	0	83	130	75	113	0	0	0
+63	0	81	130	65	98	2	0	1
+57	0	82	121	62	91	4	0	0
+28	0	78	127	61	114	19	0	1
+50	1	90	125	73	96	2	0	0
+49	1	59	110	65	149	3	0	0
+29	1	57	140	52	103	36	0	1
+80	0	76	150	81	110	2	0	1
+45	1	61	130	74	251	2	0	1
+47	1	98	110	76	87	5	0	1
+90	0	58	120	69	191	5	0	1
+45	1	83	150	94	334	1	0	1
+45	1	1111	141	95	109	1	1	1
+61	1	102	130	83	201	1	0	1
+54	1	103	120	83	101	5	0	0
+62	1	105	128	80	167	3	0	1
+65	1	61	121	60	85	0	0	1
+45	1	59	137	81	112	2	0	0
+46	1	78	115	65	123	4	0	0
+52	1	63	123	82	86	4	0	0
+58	0	91	120	80	177	18	0	1
+61	1	60	125	88	90	0	0	1
+54	0	58	130	80	125	3	0	0
+52	1	66	94	63	115	0	0	1
+57	1	94	95	65	392	3	0	0
+47	0	64	101	68	147	7	0	1
+58	1	70	117	61	87	4	0	0
+50	1	64	110	58	90	0	0	1
+65	0	61	124	62	141	1	0	1
+53	1	80	118	64	147	31	0	1
+80	0	65	112	58	222	2	0	1
+50	1	93	119	63	174	300	0	1
+72	0	63	110	59	162	3	0	1
+62	1	60	140	80	219	9	0	1
+58	0	72	138	86	189	12	1	1
+40	1	76	157	93	193	4	0	0
+45	1	74	140	85	85	4	0	0
+80	0	85	119	76	87	5	0	1
+61	1	60	202	88	111	0	6	1
+65	1	60	175	88	181	2	0	0
+62	1	60	124	58	387	1	0	0
+60	0	60	144	54	121	4	0	1
+60	0	60	130	56	294	2	0	1
+75	1	60	138	58	116	2	0	1
+66	1	60	129	55	88	1	0	1
+40	1	60	97	44	167	6	0	1
+19	0	62	114	69	240	300	0	1
+58	1	75	116	71	132	1	0	1
+77	1	73	115	72	134	19	0	1
+Time taken: 3.775 seconds, Fetched: 100 row(s)
+hive> exit;
+bash-5.0# hbase shell
+2025-05-31 05:41:19,390 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
+Version 2.3.6, r7414579f2620fca6b75146c29ab2726fc4643ac9, Wed Jul 28 22:24:42 UTC 2021
+Took 0.0018 seconds                                                                                                                                                                                                   
+hbase(main):001:0> create 'hattack_table', 'cf'
+Created table hattack_table
+Took 1.6455 seconds                                                                                                                                                                                                   
+=> Hbase::Table - hattack_table
+hbase(main):002:0> exit
+bash-5.0# hbase thrift start &
+[1] 5411
+bash-5.0# 2025-05-31 05:41:48,049 INFO  [main] thrift.ThriftServer: ***** STARTING service 'ThriftServer' *****
+2025-05-31 05:41:48,053 INFO  [main] util.VersionInfo: HBase 2.3.6
+2025-05-31 05:41:48,053 INFO  [main] util.VersionInfo: Source code repository git://7257be94c61e/home/stack/hbase-rm/output/hbase revision=7414579f2620fca6b75146c29ab2726fc4643ac9
+2025-05-31 05:41:48,053 INFO  [main] util.VersionInfo: Compiled by stack on Wed Jul 28 22:24:42 UTC 2021
+2025-05-31 05:41:48,053 INFO  [main] util.VersionInfo: From source with checksum eb11554aeb325ccaf65a9b469efe7ddcdc0bb0eec35a53f77d0c5c09eac5722007a05ef62349c7afb8005ed1abe32e772f99bb2137194641f5ce51d525aa5634
+2025-05-31 05:41:48,476 INFO  [main] thrift.ImplType: Using default thrift server type
+2025-05-31 05:41:48,476 INFO  [main] thrift.ImplType: Using thrift server type threadpool
+2025-05-31 05:41:48,543 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+2025-05-31 05:41:49,216 INFO  [main] metrics.MetricRegistries: Loaded MetricRegistries class org.apache.hadoop.hbase.metrics.impl.MetricRegistriesImpl
+2025-05-31 05:41:49,313 INFO  [main] hbase.ChoreService: Chore ScheduledChore name=ConnectionCleaner, period=10000, unit=MILLISECONDS is enabled.
+2025-05-31 05:41:49,443 INFO  [main] thrift.ThriftServer: starting HBase ThreadPool Thrift server on /0.0.0.0:9090
+2025-05-31 05:41:49,507 INFO  [main] util.log: Logging initialized @2035ms
+2025-05-31 05:41:49,669 INFO  [main] http.HttpServer: Added global filter 'safety' (class=org.apache.hadoop.hbase.http.HttpServer$QuotingInputFilter)
+2025-05-31 05:41:49,669 INFO  [main] http.HttpServer: Added global filter 'clickjackingprevention' (class=org.apache.hadoop.hbase.http.ClickjackingPreventionFilter)
+2025-05-31 05:41:49,671 INFO  [main] http.HttpServer: Added global filter 'securityheaders' (class=org.apache.hadoop.hbase.http.SecurityHeadersFilter)
+2025-05-31 05:41:49,678 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context thrift
+2025-05-31 05:41:49,679 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context logs
+2025-05-31 05:41:49,679 INFO  [main] http.HttpServer: Added filter static_user_filter (class=org.apache.hadoop.hbase.http.lib.StaticUserWebFilter$StaticUserFilter) to context static
+2025-05-31 05:41:49,696 INFO  [main] http.HttpServer: ASYNC_PROFILER_HOME environment variable and async.profiler.home system property not specified. Disabling /prof endpoint.
+2025-05-31 05:41:49,783 INFO  [main] http.HttpServer: Jetty bound to port 9095
+2025-05-31 05:41:49,786 INFO  [main] server.Server: jetty-9.3.28.v20191105, build timestamp: 2019-11-05T18:00:51Z, git hash: d7dd68d6e9d8ff06a0130e46886c2db5d70784c1
+2025-05-31 05:41:49,857 INFO  [main] http.SecurityHeadersFilter: Added security headers filter
+2025-05-31 05:41:49,865 INFO  [main] handler.ContextHandler: Started o.e.j.s.ServletContextHandler@6e9a5ed8{/logs,file:///usr/program/hbase/logs/,AVAILABLE}
+2025-05-31 05:41:49,865 INFO  [main] http.SecurityHeadersFilter: Added security headers filter
+2025-05-31 05:41:49,866 INFO  [main] handler.ContextHandler: Started o.e.j.s.ServletContextHandler@6c284af{/static,file:///usr/program/hbase/hbase-webapps/static/,AVAILABLE}
+2025-05-31 05:41:50,045 INFO  [main] webapp.StandardDescriptorProcessor: NO JSP Support for /, did not find org.eclipse.jetty.jsp.JettyJspServlet
+2025-05-31 05:41:50,056 INFO  [main] http.SecurityHeadersFilter: Added security headers filter
+2025-05-31 05:41:50,077 INFO  [main] handler.ContextHandler: Started o.e.j.w.WebAppContext@205d38da{/,file:///usr/program/hbase/hbase-webapps/thrift/,AVAILABLE}{file:/usr/program/hbase/hbase-webapps/thrift}
+2025-05-31 05:41:50,088 INFO  [main] server.AbstractConnector: Started ServerConnector@3686ad72{HTTP/1.1,[http/1.1]}{0.0.0.0:9095}
+2025-05-31 05:41:50,088 INFO  [main] server.Server: Started @2616ms
+
+bash-5.0# pyspark
+Python 3.7.10 (default, Mar  2 2021, 09:06:08) 
+[GCC 8.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/usr/program/spark/jars/slf4j-log4j12-1.7.30.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/usr/program/hadoop/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.slf4j.impl.Log4jLoggerFactory]
+0    [main] WARN  org.apache.hadoop.util.NativeCodeLoader  - Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+1037 [Thread-4] WARN  org.apache.hadoop.hive.conf.HiveConf  - HiveConf of name hive.strict.managed.tables does not exist
+1037 [Thread-4] WARN  org.apache.hadoop.hive.conf.HiveConf  - HiveConf of name hive.create.as.insert.only does not exist
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /__ / .__/\_,_/_/ /_/\_\   version 3.0.0
+      /_/
+
+Using Python version 3.7.10 (default, Mar  2 2021 09:06:08)
+SparkSession available as 'spark'.
+>>> from pyspark.sql import SparkSession
+>>> from pyspark.ml.feature import VectorAssembler
+>>> from pyspark.ml.classification import LogisticRegression
+>>> import gc
+>>> import happybase
+>>> 
+>>> spark = SparkSession.builder.appName("MLlib Heart attack Prediction").enableHiveSupport().getOrCreate()
+>>> 
+>>> def write_to_hbase(partition):
+...  connection = happybase.Connection('master')
+...   connection.open()
+  File "<stdin>", line 3
+    connection.open()
+    ^
+IndentationError: unexpected indent
+>>> def write_to_hbase(partition):
+...  connection = happybase.Connection('master')
+...  connection.open()
+...  table = connection.table('hattack_table')
+...  for row in partition:
+...   row_key, column, value = row
+...   table.put(row_key, {column: value})
+...  connection.close()
+... 
+>>> # Load the Hive data into a dataframe.
+>>> df = spark.sql("SELECT age, gender, rate, sbp, dbp, bs, ckmb, trop, result FROM hattack")
+175927 [Thread-4] WARN  org.apache.hadoop.hive.conf.HiveConf  - HiveConf of name hive.strict.managed.tables does not exist
+175928 [Thread-4] WARN  org.apache.hadoop.hive.conf.HiveConf  - HiveConf of name hive.create.as.insert.only does not exist
+175977 [Thread-4] WARN  org.apache.spark.sql.hive.client.HiveClientImpl  - Detected HiveConf hive.execution.engine is 'tez' and will be reset to 'mr' to disable useless hive logic
+>>> 
+>>> # Drop NA value.
+>>> df = df.na.drop()
+>>> 
+>>> # Obtain the features.
+>>> assembler = VectorAssembler(inputCols= ["age", "gender", "rate", "sbp", "dbp", "bs", "ckmb", "trop"], outputCol= "features")
+>>> output = assembler.transform(df)
+>>> modelDat = output.select("features", "result")
+>>> 
+>>> # Split the data into training and testing data and fit the model.
+>>> training_df, test_df = modelDat.randomSplit([0.8, 0.2])
+>>> spark.sparkContext._jvm.System.gc()
+>>> logReg = LogisticRegression(maxIter = 3, labelCol="result").fit(training_df)
+258011 [Thread-4] WARN  com.github.fommil.netlib.BLAS  - Failed to load implementation from: com.github.fommil.netlib.NativeSystemBLAS
+258013 [Thread-4] WARN  com.github.fommil.netlib.BLAS  - Failed to load implementation from: com.github.fommil.netlib.NativeRefBLAS
+>>> # Get training and testing predicitions.
+>>> training_pred = logReg.evaluate(training_df).predictions
+>>> result = logReg.evaluate(test_df).predictions
+>>> 
+>>> # Evaluate the model.
+>>> tp = result[(result.result ==1) & (result.prediction==1)].count()
+>>> tn = result[(result.result ==0) & (result.prediction==0)].count()           
+>>> fp = result[(result.result ==0) & (result.prediction==1)].count()           
+2025-05-31 05:47:38,986 INFO  [JvmPauseMonitor] util.JvmPauseMonitor: Detected pause in JVM or host machine (eg GC): pause of approximately 1339ms
+No GCs detected
+Traceback (most recent call last):=====>                            (1 + 1) / 2]
+  File "<stdin>", line 1, in <module>
+343226 [task-result-getter-0] WARN  org.apache.spark.scheduler.TaskSetManager  - Lost task 0.0 in stage 11.0 (TID 20, worker2, executor 2): TaskKilled (Stage cancelled)
+  File "/usr/program/spark/python/pyspark/sql/dataframe.py", line 585, in count
+    return int(self._jdf.count())
+  File "/usr/program/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1303, in __call__
+  File "/usr/program/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1033, in send_command
+  File "/usr/program/spark/python/lib/py4j-0.10.9-src.zip/py4j/java_gateway.py", line 1200, in send_command
+  File "/usr/lib/python3.7/socket.py", line 589, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/program/spark/python/pyspark/context.py", line 274, in signal_handler
+    raise KeyboardInterrupt()
+KeyboardInterrupt
+>>> fp = result[(result.result ==0) & (result.prediction==1)].count()
+>>> fn = result[(result.result ==1) & (result.prediction==0)].count()           
+>>> accuracy = float((tp + tn)/(result.count()))
+>>> recall = float(tn)/(tp+tn)
+>>> precision = float(tp)/(tp+fn)
+>>> f1Score = float(2*(precision*recall)/(precision+recall))
+>>> 
+>>> # Load the results to hbase.
+>>> data = [('row1', 'cf:True Positive', str(tp)), ('row2', 'cf:True Negative', str(tn)), ('row3', 'cf:False Positive', str(fp)), ('row4', 'cf:False Negative', str(fn)), ('row5', 'cf:Accuracy', str(accuracy)), ('row6', 'cf:Recall', str(recall)), ('row7', 'cf:Precision', str(precision)), ('row8', 'cf:F1-score', str(f1Score))]
+>>> 
+>>> spark.sparkContext._jvm.System.gc()
+>>> rdd = spark.sparkContext.parallelize(data)
+>>> rdd.foreachPartition(write_to_hbase)
+2025-05-31 05:49:09,183 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:zookeeper.version=3.5.7-f0fdd52973d373ffd9c86b81d99842dc2c7f660e, built on 02/10/2020 11:30 GMT
+2025-05-31 05:49:09,183 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:host.name=master
+2025-05-31 05:49:09,183 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:java.version=1.8.0_275
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:java.vendor=IcedTea
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:java.home=/usr/lib/jvm/java-1.8-openjdk/jre
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: ttp-2.7.5.jar:/usr/program/hbase/lib/okio-1.6.0.jar:/usr/program/hbase/lib/osgi-resource-locator-1.0.1.jar:/usr/program/hbase/lib/paranamer-2.3.jar:/usr/program/hbase/lib/protobuf-java-2.5.0.jar:/usr/program/hbase/lib/snappy-java-1.0.5.jar:/usr/program/hbase/lib/spymemcached-2.12.2.jar:/usr/program/hbase/lib/stax2-api-3.1.4.jar:/usr/program/hbase/lib/validation-api-1.1.0.Final.jar:/usr/program/hbase/lib/woodstox-core-5.0.3.jar:/usr/program/hbase/lib/xmlenc-0.52.jar:/usr/program/hbase/lib/zookeeper-3.5.7.jar:/usr/program/hbase/lib/zookeeper-jute-3.5.7.jar:/usr/program/hbase/lib/client-facing-thirdparty/audience-annotations-0.5.0.jar:/usr/program/hbase/lib/client-facing-thirdparty/commons-logging-1.2.jar:/usr/program/hbase/lib/client-facing-thirdparty/htrace-core4-4.2.0-incubating.jar:/usr/program/hbase/lib/client-facing-thirdparty/log4j-1.2.17.jar:/usr/program/hbase/lib/client-facing-thirdparty/slf4j-api-1.7.30.jar:/usr/program/hbase/lib/client-facing-thirdparty/slf4j-log4j12-1.7.30.jar
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:java.library.path=/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64:/usr/lib/jvm/java-1.8-openjdk/jre/../lib/amd64:/usr/program/hadoop/lib/native::/usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:java.io.tmpdir=/tmp
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:java.compiler=<NA>
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:os.name=Linux
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:os.arch=amd64
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:os.version=5.15.0-1083-gcp
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:user.name=root
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:user.home=/root
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:user.dir=/usr/program
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:os.memory.free=86MB
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:os.memory.max=1950MB
+2025-05-31 05:49:09,184 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Client environment:os.memory.total=119MB
+2025-05-31 05:49:09,195 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Initiating client connection, connectString=zoo1:2181,zoo2:2181,zoo3:2181 sessionTimeout=90000 watcher=org.apache.hadoop.hbase.zookeeper.ReadOnlyZKClient$$Lambda$40/728971699@3b51538b
+2025-05-31 05:49:09,217 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] common.X509Util: Setting -D jdk.tls.rejectClientInitiatedRenegotiation=true to disable client-initiated TLS renegotiation
+2025-05-31 05:49:09,231 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ClientCnxnSocket: jute.maxbuffer value is 4194304 Bytes
+2025-05-31 05:49:09,249 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ClientCnxn: zookeeper.request.timeout value is 0. feature enabled=
+2025-05-31 05:49:09,282 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710-SendThread(zoo1:2181)] zookeeper.ClientCnxn: Opening socket connection to server zoo1/172.28.1.11:2181. Will not attempt to authenticate using SASL (unknown error)
+2025-05-31 05:49:09,293 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710-SendThread(zoo1:2181)] zookeeper.ClientCnxn: Socket connection established, initiating session, client: /172.28.1.1:53166, server: zoo1/172.28.1.11:2181
+2025-05-31 05:49:09,312 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710-SendThread(zoo1:2181)] zookeeper.ClientCnxn: Session establishment complete on server zoo1/172.28.1.11:2181, sessionid = 0x100002047e40001, negotiated timeout = 40000
+>>> exit()                                                                      
+bash-5.0# hbase shell
+2025-05-31 05:49:38,813 WARN  [main] util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+HBase Shell
+Use "help" to get list of supported commands.
+Use "exit" to quit this interactive shell.
+For Reference, please visit: http://hbase.apache.org/2.0/book.html#shell
+Version 2.3.6, r7414579f2620fca6b75146c29ab2726fc4643ac9, Wed Jul 28 22:24:42 UTC 2021
+Took 0.0017 seconds                                                                                                               
+hbase(main):001:0> scan 'hattack_table'
+ROW                               COLUMN+CELL                                                                                     
+ row1                             column=cf:True Positive, timestamp=2025-05-31T05:49:10.879, value=12                            
+ row2                             column=cf:True Negative, timestamp=2025-05-31T05:49:10.921, value=3                             
+ row3                             column=cf:False Positive, timestamp=2025-05-31T05:49:10.941, value=1                            
+ row4                             column=cf:False Negative, timestamp=2025-05-31T05:49:10.957, value=3                            
+ row5                             column=cf:Accuracy, timestamp=2025-05-31T05:49:10.877, value=0.7894736842105263                 
+ row6                             column=cf:Recall, timestamp=2025-05-31T05:49:10.920, value=0.2                                  
+ row7                             column=cf:Precision, timestamp=2025-05-31T05:49:10.940, value=0.8                               
+ row8                             column=cf:F1-score, timestamp=2025-05-31T05:49:10.964, value=0.32000000000000006                
+8 row(s)
+Took 1.4385 seconds                                                                                                               
+hbase(main):002:0> exit
+bash-5.0# exit2025-05-31 05:50:10,031 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710] zookeeper.ZooKeeper: Session: 0x100002047e40001 closed
+2025-05-31 05:50:10,031 INFO  [ReadOnlyZKClient-zoo1:2181,zoo2:2181,zoo3:2181@0x3b5c2710-EventThread] zookeeper.ClientCnxn: EventThread shut down for session: 0x100002047e40001
+^C
+bash-5.0# exit
+exit
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/hadoop-hive-spark-hbase$ docker-compose down
+Stopping hadoop-hive-spark-hbase_master_1        ... done
+Stopping hadoop-hive-spark-hbase_worker2_1       ... done
+Stopping hadoop-hive-spark-hbase_worker1_1       ... done
+Stopping hadoop-hive-spark-hbase_zoo3_1          ... done
+Stopping hadoop-hive-spark-hbase_hivemetastore_1 ... done
+Stopping hadoop-hive-spark-hbase_zoo1_1          ... done
+Stopping hadoop-hive-spark-hbase_zoo2_1          ... done
+Removing hadoop-hive-spark-hbase_master_1        ... done
+Removing hadoop-hive-spark-hbase_worker2_1       ... done
+Removing hadoop-hive-spark-hbase_worker1_1       ... done
+Removing hadoop-hive-spark-hbase_zoo3_1          ... done
+Removing hadoop-hive-spark-hbase_hivemetastore_1 ... done
+Removing hadoop-hive-spark-hbase_zoo1_1          ... done
+Removing hadoop-hive-spark-hbase_zoo2_1          ... done
+Removing network hadoop-hive-spark-hbase_spark_net
+andrewpfeifer@dsc650week1:~/dsc650-infra/bellevue-bigdata/hadoop-hive-spark-hbase$ exit
+logout
+Connection to 34.55.11.199 closed.
+(base) andrewpfeifer@Andrews-MBP ~ % exit
+
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+[Process completed]
